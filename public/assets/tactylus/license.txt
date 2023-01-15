@@ -1,0 +1,11 @@
+Model Information:
+* title:	Tactylus
+* source:	https://sketchfab.com/3d-models/tactylus-266ba117c64a43a5b3e5a36bd6738a8a
+* author:	martijn.kunstman (https://sketchfab.com/martijn.kunstman)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Tactylus" (https://sketchfab.com/3d-models/tactylus-266ba117c64a43a5b3e5a36bd6738a8a) by martijn.kunstman (https://sketchfab.com/martijn.kunstman) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
