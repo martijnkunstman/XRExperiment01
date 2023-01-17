@@ -84,26 +84,6 @@ function remove() {
     }
 }
 
-
-
-/*
-socket.on('add', id => {  
-    console.log("add");  
-    let newPlayer = document.createElement('a-entity');
-    newPlayer.setAttribute('geometry', {
-        primitive: 'sphere',
-        radius: 0.5
-    });
-    newPlayer.setAttribute('position', { x: 0, y: 1, z: -2 });
-    newPlayer.setAttribute('id', id);
-    sceneEl.appendChild(newPlayer);
-});
-socket.on('remove', id => {
-    console.log("remove");  
-    document.querySelector("#" + id).remove();
-});
-*/
-
 function move(direction) {
     //update player position
     position.x = position.x + direction[0] * moveFactor;
