@@ -10,33 +10,27 @@
     <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
     <script src="js/play-on-click.js"></script>
     <script src="js/hide-on-play.js"></script>
+    <script src="js/socket.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <a-scene>
-        <a-box id="box" position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+        <!-- <a-assets>
+            <img id="sky" src="assets/sky.jpg">
+        </a-assets> -->
         <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
         <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-        <a-sky color="#ECECEC"></a-sky>
+        <a-plane position="0 -1 0" rotation="-90 0 0" width="20" height="20" color="#7BC8A4"></a-plane>
+        <a-sky color="#ECECEC" src="#sky"></a-sky>
     </a-scene>
-    <div onclick="counterF()" style="position:absolute;top:0;left:0;">click</div>
-    <script>
-        var socket = io();
-        var counter = -1;
-        var box = document.querySelector("#box") 
-        box.setAttribute('position', {x: -1, y: 0.5, z: -3});
-        function counterF() {
-            counter = counter + 0.1;
-            socket.emit('click', counter);
-            box.setAttribute('position', {x: counter, y: 0.5, z: -3});
-            console.log('click');
-        }
-        socket.on('init', (message) => {
-            console.log('Message: ' + message)
-        })
-        
-    </script>
+
+    <div id="user-id"></div>
+    <div id="position"></div>
+    <div class="movebutton" onclick="move([1,0])" style="top:30px;left:50px;">&gt;</div>
+    <div class="movebutton" onclick="move([-1,0])" style="top:30px;left:10px;">&lt;</div>
+    <div class="movebutton" onclick="move([0,-1])" style="top:10px;left:30px;">^</div>
+    <div class="movebutton" onclick="move([0,1])" style="top:50px;left:30px;">v</div>
 </body>
 
 </html>

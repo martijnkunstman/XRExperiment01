@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap');
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+.movebutton{
+    position:absolute;
+    border:1px solid white;
+    background-color: gray;
+    color: black;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    width: 20px;
+    height: 20px;
+    font-size:10px;
+    line-height: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    
+}
+.movebutton:hover{
+    background-color: lightgray; 
+    color: darkgray; 
+    box-shadow: 0 0 10px rgba(0,0,0,1);  
+}
