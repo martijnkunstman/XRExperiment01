@@ -5,8 +5,10 @@ let gameData = [];
 let player;
 let moveFactor = 0.1;
 let sceneEl = document.querySelector('a-scene');
+let positionDomElement = document.querySelector('#position');
 
 socket.on('init', (data) => {
+    document.getElementById('user-id').innerHTML = data.id;  
     console.log('Data:');
     console.log(data);
     //create player
@@ -23,6 +25,7 @@ socket.on('init', (data) => {
     id = data.id;
     gameData = data.gameData;
     update();
+    positionDomElement.innerHTML = "Position: " + position.x + ", " + position.y + ", " + position.z;
 });
 
 socket.on('update', data => {
@@ -64,6 +67,7 @@ function add() {
         }
     }
 }
+
 function remove() {
     let players = document.querySelectorAll('a-entity[player]');
     for (let player of players) {
@@ -86,10 +90,11 @@ function remove() {
 
 function move(direction) {
     //update player position
-    position.x = position.x + direction[0] * moveFactor;
+    position.x = Math.round((position.x + direction[0] * moveFactor) * 100) / 100;
     position.y = position.y;
-    position.z = position.z + direction[1] * moveFactor
+    position.z = Math.round((position.z + direction[1] * moveFactor) * 100) / 100;
     player.setAttribute('position', position);
     //send new position to server
     socket.emit('move', position);
+    positionDomElement.innerHTML = "Position: " + position.x + ", " + position.y + ", " + position.z;
 }
