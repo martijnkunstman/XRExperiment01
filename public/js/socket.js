@@ -17,6 +17,15 @@ socket.on('init', (data) => {
         primitive: 'sphere',
         radius: 0.5
     });
+    player.setAttribute('material', {
+        shader: 'phong',
+        reflectivity: 0.9,
+        shininess: 30,
+        color: '#0000ff'
+    });
+    player.setAttribute('shadow', {
+        cast: true
+    });
     position = { x: 0, y: 1, z: -2 };
     player.setAttribute('position', position);
     player.setAttribute('id', data.id);
@@ -58,6 +67,15 @@ function add() {
                 otherPlayer.setAttribute('geometry', {
                     primitive: 'sphere',
                     radius: 0.5
+                });
+                otherPlayer.setAttribute('shadow', {
+                    cast: true
+                });
+                otherPlayer.setAttribute('material', {
+                    shader: 'phong',
+                    reflectivity: 0.9,
+                    shininess: 30,
+                    color: '#ff0000'
                 });
                 otherPlayer.setAttribute('position', { x: player.x, y: player.y, z: player.z });
                 otherPlayer.setAttribute('id', player.id);
