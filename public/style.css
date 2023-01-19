@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap');
+
+*{user-select: none;}
+
 body{
     font-family: 'Open Sans', sans-serif;
 }
